@@ -6,7 +6,6 @@ linters:
     - gochecknoglobals
     - gochecknoinits
     - goerr113
-    - nlreturn
     - noctx
     - wsl
 

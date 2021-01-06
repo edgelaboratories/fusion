@@ -13,17 +13,13 @@ var jsonCmd = &cobra.Command{
 	Use:   "json",
 	Short: "Merge JSON files together",
 	Run: func(cmd *cobra.Command, args []string) {
-		config.AddDriver(json.Driver)
-		config.WithOptions(func(opts *config.Options) {
+		cfg := config.New("json")
+		cfg.AddDriver(json.Driver)
+		cfg.WithOptions(func(opts *config.Options) {
 			opts.DumpFormat = config.JSON
 		})
 
-		if err := config.LoadFiles(args...); err != nil {
-			fmt.Println("failed to load the input files:", err)
-			os.Exit(1)
-		}
-
-		if err := writeToFile(outputFilename); err != nil {
+		if err := merge(cfg, outputFilename, args...); err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}

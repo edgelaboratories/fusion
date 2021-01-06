@@ -13,17 +13,13 @@ var yamlCmd = &cobra.Command{
 	Use:   "yaml",
 	Short: "Merge YAML files together",
 	Run: func(cmd *cobra.Command, args []string) {
-		config.AddDriver(yaml.Driver)
-		config.WithOptions(func(opts *config.Options) {
+		cfg := config.New("toml")
+		cfg.AddDriver(yaml.Driver)
+		cfg.WithOptions(func(opts *config.Options) {
 			opts.DumpFormat = config.Yaml
 		})
 
-		if err := config.LoadFiles(args...); err != nil {
-			fmt.Println("failed to load the input files:", err)
-			os.Exit(1)
-		}
-
-		if err := writeToFile(outputFilename); err != nil {
+		if err := merge(cfg, outputFilename, args...); err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
