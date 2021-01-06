@@ -3,10 +3,9 @@ linters:
   disable:
     - dupl
     - exhaustivestruct
+    - forbidigo
     - gochecknoglobals
     - gochecknoinits
-    - goerr113
-    - noctx
     - wsl
 
 issues:
