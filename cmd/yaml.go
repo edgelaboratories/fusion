@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"fmt"
 	"os"
 
+	"github.com/fatih/color"
 	"github.com/gookit/config/v2"
 	"github.com/gookit/config/v2/yaml"
 	"github.com/spf13/cobra"
@@ -13,14 +13,18 @@ var yamlCmd = &cobra.Command{
 	Use:   "yaml",
 	Short: "Merge YAML files together",
 	Run: func(cmd *cobra.Command, args []string) {
-		cfg := config.New("toml")
+		if verbose {
+			color.Green("operating on YAML files")
+		}
+
+		cfg := config.New("yaml")
 		cfg.AddDriver(yaml.Driver)
 		cfg.WithOptions(func(opts *config.Options) {
 			opts.DumpFormat = config.Yaml
 		})
 
 		if err := merge(cfg, outputFilename, args...); err != nil {
-			fmt.Println(err)
+			color.Red(err.Error())
 			os.Exit(1)
 		}
 	},
