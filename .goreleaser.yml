@@ -8,6 +8,8 @@ builds:
       - linux
       - windows
       - darwin
+    ldflags:
+      - -s -w -X github.com/edgelaboratories/fusion/cmd.version={{.Tag}}
 archives:
   - replacements:
       darwin: Darwin
