@@ -59,38 +59,45 @@ type dummy struct {
 func (suite *ConfigTestSuite) TestMerge() {
 	f1 := "testdata/file1.yml"
 	f2 := "testdata/file2.yml"
+	exp := "testdata/expected.yml"
 
 	tmpFilename := suite.tmpFile.Name()
 	suite.NoError(merge(suite.config, tmpFilename, f1, f2))
 
-	resFile, err := ioutil.ReadFile(tmpFilename)
+	resultFile, err := ioutil.ReadFile(tmpFilename)
 	suite.NoError(err)
 
-	var res dummy
-	suite.NoError(yml.Unmarshal(resFile, &res))
+	var result dummy
+	suite.NoError(yml.Unmarshal(resultFile, &result))
 
-	suite.Equal(34, res.Age)
-	suite.Equal("val2", res.Key)
-	suite.Equal(1, res.Tags["key1"])
-	suite.Equal(2, res.Tags["key2"])
-	suite.Equal(3, res.Tags["key3"])
+	expectedFile, err := ioutil.ReadFile(exp)
+	suite.NoError(err)
+
+	var expected dummy
+	suite.NoError(yml.Unmarshal(expectedFile, &expected))
+
+	suite.Equal(expected, result)
 }
 
 func (suite *ConfigTestSuite) TestWriteToFile() {
-	suite.Require().NoError(suite.config.LoadFiles("testdata/file1.yml"))
+	file := "testdata/file1.yml"
+	suite.Require().NoError(suite.config.LoadFiles(file))
 
 	tmpFilename := suite.tmpFile.Name()
 
 	suite.NoError(writeToFile(suite.config, tmpFilename))
 
-	resFile, err := ioutil.ReadFile(tmpFilename)
+	resultFile, err := ioutil.ReadFile(tmpFilename)
 	suite.NoError(err)
 
-	var res dummy
-	suite.NoError(yml.Unmarshal(resFile, &res))
+	var result dummy
+	suite.NoError(yml.Unmarshal(resultFile, &result))
 
-	suite.Equal(34, res.Age)
-	suite.Equal("val", res.Key)
-	suite.Equal(1, res.Tags["key1"])
-	suite.Equal(2, res.Tags["key2"])
+	expectedFile, err := ioutil.ReadFile(file)
+	suite.NoError(err)
+
+	var expected dummy
+	suite.NoError(yml.Unmarshal(expectedFile, &expected))
+
+	suite.Equal(expected, result)
 }
