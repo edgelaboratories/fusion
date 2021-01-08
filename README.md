@@ -1,5 +1,11 @@
 # fusion
 
+[![Release](https://img.shields.io/github/release/edgelaboratories/fusion.svg?style=for-the-badge)](https://github.com/edgelaboratories/fusion/releases/latest)
+![License](https://img.shields.io/github/license/edgelaboratories/fusion?style=for-the-badge)
+[![Go version](https://img.shields.io/github/go-mod/go-version/edgelaboratories/fusion.svg?style=for-the-badge)](https://github.com/edgelaboratories/fusion)
+[![Test status](https://img.shields.io/github/workflow/status/edgelaboratories/fusion/Test?label=Tests&style=for-the-badge)](https://github.com/edgelaboratories/fusion/actions?workflow=Test)
+[![GolangCI status](https://img.shields.io/github/workflow/status/edgelaboratories/fusion/Golangci-Lint?label=Lint&style=for-the-badge)](https://github.com/edgelaboratories/fusion/actions?workflow=Golangci-Lint)
+
 fusion is CLI tool to merge [JSON](https://www.json.org/json-en.html), [YAML](https://yaml.org/) or [TOML](https://toml.io/en/) files.
 
 ## Installation
