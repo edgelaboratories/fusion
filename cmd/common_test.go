@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -34,7 +33,7 @@ func (suite *ConfigTestSuite) TearDownSuite() {
 }
 
 func (suite *ConfigTestSuite) SetupTest() {
-	tmpFile, err := ioutil.TempFile(os.TempDir(), "fusion-")
+	tmpFile, err := os.CreateTemp(os.TempDir(), "fusion-")
 	suite.Require().NoError(err)
 	suite.tmpFile = tmpFile
 }
@@ -64,13 +63,13 @@ func (suite *ConfigTestSuite) TestMerge() {
 	tmpFilename := suite.tmpFile.Name()
 	suite.NoError(merge(suite.config, tmpFilename, f1, f2))
 
-	resultFile, err := ioutil.ReadFile(tmpFilename)
+	resultFile, err := os.ReadFile(tmpFilename)
 	suite.NoError(err)
 
 	var result dummy
 	suite.NoError(yml.Unmarshal(resultFile, &result))
 
-	expectedFile, err := ioutil.ReadFile(exp)
+	expectedFile, err := os.ReadFile(exp)
 	suite.NoError(err)
 
 	var expected dummy
@@ -87,13 +86,13 @@ func (suite *ConfigTestSuite) TestWriteToFile() {
 
 	suite.NoError(writeToFile(suite.config, tmpFilename))
 
-	resultFile, err := ioutil.ReadFile(tmpFilename)
+	resultFile, err := os.ReadFile(tmpFilename)
 	suite.NoError(err)
 
 	var result dummy
 	suite.NoError(yml.Unmarshal(resultFile, &result))
 
-	expectedFile, err := ioutil.ReadFile(file)
+	expectedFile, err := os.ReadFile(file)
 	suite.NoError(err)
 
 	var expected dummy

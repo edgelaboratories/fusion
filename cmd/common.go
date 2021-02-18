@@ -20,11 +20,7 @@ func merge(cfg *config.Config, outputFilename string, sourceFiles ...string) err
 		return fmt.Errorf("failed to load the input files: %w", err)
 	}
 
-	if err := writeToFile(cfg, outputFilename); err != nil {
-		return err
-	}
-
-	return nil
+	return writeToFile(cfg, outputFilename)
 }
 
 func writeToFile(w io.WriterTo, outputFilename string) error {
