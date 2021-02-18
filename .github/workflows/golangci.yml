@@ -8,8 +8,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16.x
+
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v2
         with:
           version: v1.37
-          skip-go-installation: true
