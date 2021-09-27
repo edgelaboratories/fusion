@@ -6,6 +6,10 @@ linters:
     - forbidigo
     - gochecknoglobals
     - gochecknoinits
+    - golint # deprecated
+    - interfacer # deprecated
+    - maligned # deprecated
+    - scopelint # deprecated
     - wsl
 
 issues:
