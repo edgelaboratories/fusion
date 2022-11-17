@@ -1,5 +1,5 @@
-github.com/BurntSushi/toml v1.2.0 h1:Rt8g24XnyGTyglgET/PRUNlrUeu9F5L+7FilkXfZgs0=
-github.com/BurntSushi/toml v1.2.0/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
+github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=
+github.com/BurntSushi/toml v1.2.1/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
 github.com/apparentlymart/go-dump v0.0.0-20180507223929-23540a00eaa3/go.mod h1:oL81AME2rN47vu18xqj1S1jPIPuN7afo62yKTNn3XMM=
 github.com/apparentlymart/go-textseg v1.0.0/go.mod h1:z96Txxhf3xSFMPmb5X/1W05FF/Nj9VFpLOpjS5yuumk=
@@ -18,8 +18,8 @@ github.com/google/go-cmp v0.3.1/go.mod h1:8QqcDgzrUqlUb/G2PQTWiueGozuR1884gddMyw
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
 github.com/gookit/color v1.5.2 h1:uLnfXcaFjlrDnQDT+NCBcfhrXqYTx/rcCa6xn01Y8yI=
 github.com/gookit/color v1.5.2/go.mod h1:w8h4bGiHeeBpvQVePTutdbERIUf3oJE5lZ8HM0UgXyg=
-github.com/gookit/config/v2 v2.1.7 h1:pxIXnHEoeUv6DtbUl4qj8gE3YxgWPjuuB9wiKur9JE0=
-github.com/gookit/config/v2 v2.1.7/go.mod h1:Rlm83qfFCyrJ+8O3iTx2xUvflOTBrCuLcaT65fytENA=
+github.com/gookit/config/v2 v2.1.8 h1:fH8NKzOLlQ2Ud65Czy5Tq+t1I8U7M9BmIPgVFQ4T9UQ=
+github.com/gookit/config/v2 v2.1.8/go.mod h1:AP8Obh1AKx1pFkBNE2EghDb1ei2/fG33ULfkzuw4s0c=
 github.com/gookit/goutil v0.5.14/go.mod h1:ozPE16eJS9f89aVbVk05ocEJsia3KPrYUqPTs8GvUTw=
 github.com/gookit/goutil v0.5.15 h1:FaRyj0uVqi7j92QHsG+2Sc1VZ7/7ma77UD3/wBpwyTc=
 github.com/gookit/goutil v0.5.15/go.mod h1:ozPE16eJS9f89aVbVk05ocEJsia3KPrYUqPTs8GvUTw=
