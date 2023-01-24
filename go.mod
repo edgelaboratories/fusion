@@ -3,7 +3,7 @@ module github.com/edgelaboratories/fusion
 go 1.17
 
 require (
-	github.com/fatih/color v1.14.0
+	github.com/fatih/color v1.14.1
 	github.com/gookit/config/v2 v2.1.8
 	github.com/spf13/cobra v1.6.1
 	github.com/stretchr/testify v1.8.1
