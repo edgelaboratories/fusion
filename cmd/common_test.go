@@ -50,6 +50,8 @@ func TestConfigTestSuite(t *testing.T) {
 }
 
 type dummy struct {
+	Username string
+	Email string
 	Age  int
 	Key  string
 	Tags map[string]int
