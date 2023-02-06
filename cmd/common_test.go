@@ -50,9 +50,11 @@ func TestConfigTestSuite(t *testing.T) {
 }
 
 type dummy struct {
-	Age  int
-	Key  string
-	Tags map[string]int
+	Username string
+	Email    string
+	Age      int
+	Key      string
+	Tags     map[string]int
 }
 
 func (suite *ConfigTestSuite) TestMerge() {
