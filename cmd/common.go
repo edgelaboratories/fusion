@@ -23,12 +23,12 @@ func merge(cfg *config.Config, outputFilename string, sourceFiles ...string) err
 	return writeToFile(cfg, outputFilename)
 }
 
-func writeToFile(w io.WriterTo, outputFilename string) error {
+func writeToFile(writer io.WriterTo, outputFilename string) error {
 	if verbose {
 		color.Green("creating output file: %s", outputFilename)
 	}
 
-	f, err := os.Create(outputFilename)
+	file, err := os.Create(outputFilename)
 	if err != nil {
 		return fmt.Errorf("failed to create the output file: %w", err)
 	}
@@ -37,7 +37,7 @@ func writeToFile(w io.WriterTo, outputFilename string) error {
 		if verbose {
 			color.Green("closing output file: %s", outputFilename)
 		}
-		if err = f.Close(); err != nil {
+		if err = file.Close(); err != nil {
 			color.Red("failed to close the output file:", err)
 		}
 	}()
@@ -45,7 +45,7 @@ func writeToFile(w io.WriterTo, outputFilename string) error {
 	if verbose {
 		color.Green("writing result to file: %s", outputFilename)
 	}
-	_, err = w.WriteTo(f)
+	_, err = writer.WriteTo(file)
 	if err != nil {
 		return fmt.Errorf("failed to write to the output file: %w", err)
 	}

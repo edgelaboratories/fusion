@@ -3,14 +3,23 @@ linters:
   disable:
     - dupl
     - exhaustivestruct
+    - exhaustruct
     - forbidigo
     - gochecknoglobals
     - gochecknoinits
+    - wsl
+    - deadcode # deprecated
     - golint # deprecated
+    - ifshort # deprecated
     - interfacer # deprecated
     - maligned # deprecated
+    - nosnakecase # deprecated
+    - rowserrcheck # deprecated
     - scopelint # deprecated
-    - wsl
+    - structcheck # deprecated
+    - structcheck # deprecated
+    - varcheck # deprecated
+    - wastedassign # deprecated
 
 issues:
   exclude-rules:
