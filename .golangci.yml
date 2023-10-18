@@ -1,3 +1,22 @@
+linters-settings:
+  depguard:
+    rules:
+      main:
+        files:
+          - "!$test"
+        allow:
+          - $gostd
+          - "github.com/edgelaboratories/fusion"
+          - "github.com/fatih/color"
+          - "github.com/gookit/config/v2"
+          - "github.com/spf13/cobra"
+
+  gci:
+    sections:
+      - standard
+      - default
+      - prefix(github.com/edgelaboratories/fusion)
+
 linters:
   enable-all: true
   disable:
