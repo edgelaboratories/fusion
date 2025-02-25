@@ -7,7 +7,7 @@ import (
 	"github.com/gookit/config/v2"
 	"github.com/gookit/config/v2/yaml"
 	"github.com/stretchr/testify/suite"
-	yml "gopkg.in/yaml.v2"
+	yml "gopkg.in/yaml.v3"
 )
 
 type ConfigTestSuite struct {
@@ -50,11 +50,11 @@ func TestConfigTestSuite(t *testing.T) {
 }
 
 type dummy struct {
-	Username string
-	Email    string
-	Age      int
-	Key      string
-	Tags     map[string]int
+	Username string         `yaml:"username"`
+	Email    string         `yaml:"email"`
+	Age      int            `yaml:"age"`
+	Key      string         `yaml:"key"`
+	Tags     map[string]int `yaml:"tags"`
 }
 
 func (suite *ConfigTestSuite) TestMerge() {
@@ -63,10 +63,10 @@ func (suite *ConfigTestSuite) TestMerge() {
 	exp := "testdata/expected.yml"
 
 	tmpFilename := suite.tmpFile.Name()
-	suite.NoError(merge(suite.config, tmpFilename, f1, f2))
+	suite.Require().NoError(merge(suite.config, tmpFilename, f1, f2))
 
 	resultFile, err := os.ReadFile(tmpFilename)
-	suite.NoError(err)
+	suite.Require().NoError(err)
 
 	var result dummy
 	suite.NoError(yml.Unmarshal(resultFile, &result))
@@ -86,7 +86,7 @@ func (suite *ConfigTestSuite) TestWriteToFile() {
 
 	tmpFilename := suite.tmpFile.Name()
 
-	suite.NoError(writeToFile(suite.config, tmpFilename))
+	suite.Require().NoError(writeToFile(suite.config, tmpFilename))
 
 	resultFile, err := os.ReadFile(tmpFilename)
 	suite.NoError(err)

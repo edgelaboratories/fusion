@@ -12,7 +12,7 @@ import (
 var jsonCmd = &cobra.Command{
 	Use:   "json",
 	Short: "Merge JSON files together",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		if verbose {
 			color.Green("operating on JSON files")
 		}

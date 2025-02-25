@@ -21,24 +21,15 @@ linters:
   enable-all: true
   disable:
     - dupl
-    - exhaustivestruct
     - exhaustruct
     - forbidigo
     - gochecknoglobals
     - gochecknoinits
     - wsl
-    - deadcode # deprecated
-    - golint # deprecated
-    - ifshort # deprecated
-    - interfacer # deprecated
-    - maligned # deprecated
-    - nosnakecase # deprecated
-    - rowserrcheck # deprecated
-    - scopelint # deprecated
-    - structcheck # deprecated
-    - structcheck # deprecated
-    - varcheck # deprecated
-    - wastedassign # deprecated
+    # deprecated
+    - rowserrcheck
+    - tenv
+    - wastedassign
 
 issues:
   exclude-rules:
