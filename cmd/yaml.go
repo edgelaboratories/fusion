@@ -12,7 +12,7 @@ import (
 var yamlCmd = &cobra.Command{
 	Use:   "yaml",
 	Short: "Merge YAML files together",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		if verbose {
 			color.Green("operating on YAML files")
 		}
