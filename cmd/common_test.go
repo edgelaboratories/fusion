@@ -63,7 +63,7 @@ func (suite *ConfigTestSuite) TestMerge() {
 	exp := "testdata/expected.yml"
 
 	tmpFilename := suite.tmpFile.Name()
-	suite.NoError(merge(suite.config, tmpFilename, f1, f2))
+	suite.Require().NoError(merge(suite.config, tmpFilename, f1, f2))
 
 	resultFile, err := os.ReadFile(tmpFilename)
 	suite.NoError(err)
@@ -86,7 +86,7 @@ func (suite *ConfigTestSuite) TestWriteToFile() {
 
 	tmpFilename := suite.tmpFile.Name()
 
-	suite.NoError(writeToFile(suite.config, tmpFilename))
+	suite.Require().NoError(writeToFile(suite.config, tmpFilename))
 
 	resultFile, err := os.ReadFile(tmpFilename)
 	suite.NoError(err)

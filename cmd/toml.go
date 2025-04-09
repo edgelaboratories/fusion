@@ -12,7 +12,7 @@ import (
 var tomlCmd = &cobra.Command{
 	Use:   "toml",
 	Short: "Merge TOML files together",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		if verbose {
 			color.Green("operating on TOML files")
 		}
