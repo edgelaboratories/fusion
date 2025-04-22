@@ -3,7 +3,7 @@ name: Golangci-Lint
 on: [pull_request]
 jobs:
   lint:
-    runs-on: [self-hosted-ubuntu-x64]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
