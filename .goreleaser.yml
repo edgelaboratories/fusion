@@ -1,3 +1,4 @@
+version: 2
 before:
   hooks:
     - go mod download
@@ -8,20 +9,26 @@ builds:
       - linux
       - windows
       - darwin
+    goarch:
+      - amd64
+      - arm64
     ldflags:
       - -s -w -X github.com/edgelaboratories/fusion/cmd.version={{.Tag}}
 archives:
-  - format: binary
-    replacements:
-      darwin: Darwin
-      linux: Linux
-      windows: Windows
-      386: i386
-      amd64: x86_64
+  - id: binary
+    formats:
+      - binary
+      - zip
+    name_template: >-
+      {{- .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end -}}
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-next"
+  version_template: "{{ .Tag }}-next"
 changelog:
   sort: asc
   filters:
