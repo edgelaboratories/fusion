@@ -1,43 +1,61 @@
-linters-settings:
-  depguard:
-    rules:
-      main:
-        files:
-          - "!$test"
-        allow:
-          - $gostd
-          - "github.com/edgelaboratories/fusion"
-          - "github.com/fatih/color"
-          - "github.com/gookit/config/v2"
-          - "github.com/spf13/cobra"
-
-  gci:
-    sections:
-      - standard
-      - default
-      - prefix(github.com/edgelaboratories/fusion)
-
+version: "2"
 linters:
-  enable-all: true
+  default: all
   disable:
     - dupl
     - exhaustruct
     - forbidigo
     - gochecknoglobals
     - gochecknoinits
-    - wsl
-    # deprecated
     - rowserrcheck
-    - tenv
     - wastedassign
-
-issues:
-  exclude-rules:
-    - path: main.go
-      linters:
-        - gomnd
-    # Exclude some linters from running on tests files.
-    - path: _test\.go
-      linters:
-        - gomnd
-        - testpackage
+    - wsl
+  settings:
+    depguard:
+      rules:
+        main:
+          files:
+            - '!$test'
+          allow:
+            - $gostd
+            - github.com/edgelaboratories/fusion
+            - github.com/fatih/color
+            - github.com/gookit/config/v2
+            - github.com/spf13/cobra
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - mnd
+        path: main.go
+      - linters:
+          - mnd
+          - testpackage
+        path: _test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gci
+    - gofmt
+    - gofumpt
+    - goimports
+  settings:
+    gci:
+      sections:
+        - standard
+        - default
+        - prefix(github.com/edgelaboratories/fusion)
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
