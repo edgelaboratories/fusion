@@ -16,7 +16,8 @@ func merge(cfg *config.Config, outputFilename string, sourceFiles ...string) err
 		color.Green("loading and merging %d files together: %v", len(sourceFiles), sourceFiles)
 	}
 
-	if err := cfg.LoadFiles(sourceFiles...); err != nil {
+	err := cfg.LoadFiles(sourceFiles...)
+	if err != nil {
 		return fmt.Errorf("failed to load the input files: %w", err)
 	}
 
@@ -28,7 +29,7 @@ func writeToFile(writer io.WriterTo, outputFilename string) error {
 		color.Green("creating output file: %s", outputFilename)
 	}
 
-	file, err := os.Create(outputFilename)
+	file, err := os.Create(outputFilename) //nolint:gosec
 	if err != nil {
 		return fmt.Errorf("failed to create the output file: %w", err)
 	}
@@ -37,7 +38,9 @@ func writeToFile(writer io.WriterTo, outputFilename string) error {
 		if verbose {
 			color.Green("closing output file: %s", outputFilename)
 		}
-		if err = file.Close(); err != nil {
+
+		err := file.Close()
+		if err != nil {
 			color.Red("failed to close the output file:", err)
 		}
 	}()
@@ -45,6 +48,7 @@ func writeToFile(writer io.WriterTo, outputFilename string) error {
 	if verbose {
 		color.Green("writing result to file: %s", outputFilename)
 	}
+
 	_, err = writer.WriteTo(file)
 	if err != nil {
 		return fmt.Errorf("failed to write to the output file: %w", err)

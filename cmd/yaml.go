@@ -23,7 +23,8 @@ var yamlCmd = &cobra.Command{
 			opts.DumpFormat = config.Yaml
 		})
 
-		if err := merge(cfg, outputFilename, args...); err != nil {
+		err := merge(cfg, outputFilename, args...)
+		if err != nil {
 			color.Red(err.Error())
 			os.Exit(1)
 		}
@@ -33,10 +34,14 @@ var yamlCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(yamlCmd)
 	yamlCmd.Flags().StringVarP(&outputFilename, "out", "o", "", "output file")
-	if err := yamlCmd.MarkFlagRequired("out"); err != nil {
+
+	err := yamlCmd.MarkFlagRequired("out")
+	if err != nil {
 		panic(err)
 	}
-	if err := yamlCmd.MarkFlagFilename("out", "yaml", "yml"); err != nil {
+
+	err = yamlCmd.MarkFlagFilename("out", "yaml", "yml")
+	if err != nil {
 		panic(err)
 	}
 }

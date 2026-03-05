@@ -23,7 +23,8 @@ var jsonCmd = &cobra.Command{
 			opts.DumpFormat = config.JSON
 		})
 
-		if err := merge(cfg, outputFilename, args...); err != nil {
+		err := merge(cfg, outputFilename, args...)
+		if err != nil {
 			color.Red(err.Error())
 			os.Exit(1)
 		}
@@ -33,10 +34,14 @@ var jsonCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(jsonCmd)
 	jsonCmd.Flags().StringVarP(&outputFilename, "out", "o", "", "output file")
-	if err := jsonCmd.MarkFlagRequired("out"); err != nil {
+
+	err := jsonCmd.MarkFlagRequired("out")
+	if err != nil {
 		panic(err)
 	}
-	if err := jsonCmd.MarkFlagFilename("out", "json"); err != nil {
+
+	err = jsonCmd.MarkFlagFilename("out", "json")
+	if err != nil {
 		panic(err)
 	}
 }
