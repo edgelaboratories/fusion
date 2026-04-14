@@ -20,7 +20,8 @@ It supports the following file types: JSON, YAML and TOML.`,
 // Execute adds all child commands to the root command and sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
+	err := rootCmd.Execute()
+	if err != nil {
 		color.Red(err.Error())
 		os.Exit(1)
 	}

@@ -23,7 +23,8 @@ var tomlCmd = &cobra.Command{
 			opts.DumpFormat = config.Toml
 		})
 
-		if err := merge(cfg, outputFilename, args...); err != nil {
+		err := merge(cfg, outputFilename, args...)
+		if err != nil {
 			color.Red(err.Error())
 			os.Exit(1)
 		}
@@ -33,10 +34,14 @@ var tomlCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(tomlCmd)
 	tomlCmd.Flags().StringVarP(&outputFilename, "out", "o", "", "output file")
-	if err := tomlCmd.MarkFlagRequired("out"); err != nil {
+
+	err := tomlCmd.MarkFlagRequired("out")
+	if err != nil {
 		panic(err)
 	}
-	if err := tomlCmd.MarkFlagFilename("out", "toml"); err != nil {
+
+	err = tomlCmd.MarkFlagFilename("out", "toml")
+	if err != nil {
 		panic(err)
 	}
 }
