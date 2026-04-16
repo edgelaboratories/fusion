@@ -29,7 +29,7 @@ func writeToFile(writer io.WriterTo, outputFilename string) error {
 		color.Green("creating output file: %s", outputFilename)
 	}
 
-	file, err := os.Create(outputFilename) //nolint:gosec
+	file, err := os.Create(outputFilename)
 	if err != nil {
 		return fmt.Errorf("failed to create the output file: %w", err)
 	}
