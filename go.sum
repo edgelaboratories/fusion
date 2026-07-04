@@ -41,12 +41,16 @@ github.com/gookit/config/v2 v2.2.7 h1:P58/uENzkDp7r7Hp8YSZxOhZ/F5a5Y/AzyhDUkQYa9
 github.com/gookit/config/v2 v2.2.7/go.mod h1:QST99HmkZXXD/HkZmOm1OXpgdAnc6Rl9syGl+u62Pi8=
 github.com/gookit/config/v2 v2.2.8 h1:TX6CypFUj9mZeDxpigerUG2P27u/BDM2l6UUIj0G8rA=
 github.com/gookit/config/v2 v2.2.8/go.mod h1:keuITIN2+4SBT3osc3LqqG3xTWaDEbftScDYCbcLwJQ=
+github.com/gookit/config/v2 v2.2.9 h1:ojnE2743wU+DHKWR07x2lWjoONaSkkaTzoNozyHF1b4=
+github.com/gookit/config/v2 v2.2.9/go.mod h1:PgwcvKHnKZk8w/JdqvdF452OXeYnaHj72OEPhffrniA=
 github.com/gookit/goutil v0.6.18 h1:MUVj0G16flubWT8zYVicIuisUiHdgirPAkmnfD2kKgw=
 github.com/gookit/goutil v0.6.18/go.mod h1:AY/5sAwKe7Xck+mEbuxj0n/bc3qwrGNe3Oeulln7zBA=
 github.com/gookit/goutil v0.7.1 h1:AaFJPN9mrdeYBv8HOybri26EHGCC34WJVT7jUStGJsI=
 github.com/gookit/goutil v0.7.1/go.mod h1:vJS9HXctYTCLtCsZot5L5xF+O1oR17cDYO9R0HxBmnU=
 github.com/gookit/goutil v0.7.5 h1:FXLTq+hVniw7UVMnr2i371yXqslgVpXqXszvXCJdEH8=
 github.com/gookit/goutil v0.7.5/go.mod h1:vJS9HXctYTCLtCsZot5L5xF+O1oR17cDYO9R0HxBmnU=
+github.com/gookit/goutil v0.8.0 h1:efZWxfesXw8+5tQfTfRMSIC6A0ax527/H+A/aIiaSrw=
+github.com/gookit/goutil v0.8.0/go.mod h1:vJS9HXctYTCLtCsZot5L5xF+O1oR17cDYO9R0HxBmnU=
 github.com/gookit/ini/v2 v2.2.3 h1:nSbN+x9OfQPcMObTFP+XuHt8ev6ndv/fWWqxFhPMu2E=
 github.com/gookit/ini/v2 v2.2.3/go.mod h1:Vu6p7P7xcfmb8KYu3L0ek8bqu/Im63N81q208SCCZY4=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
