@@ -6,7 +6,7 @@ require (
 	github.com/fatih/color v1.19.0
 	github.com/gookit/config/v2 v2.2.9
 	github.com/spf13/cobra v1.10.2
-	github.com/stretchr/testify v1.11.1
+	github.com/stretchr/testify v1.12.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
