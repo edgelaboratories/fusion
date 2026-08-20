@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var tomlCmd = &cobra.Command{
+var tomlCmd = &cobra.Command{ //nolint:exhaustruct_v5
 	Use:   "toml",
 	Short: "Merge TOML files together",
 	Run: func(_ *cobra.Command, args []string) {
