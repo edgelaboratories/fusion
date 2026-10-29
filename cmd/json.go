@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var jsonCmd = &cobra.Command{
+var jsonCmd = &cobra.Command{ //nolint:exhaustruct_v5
 	Use:   "json",
 	Short: "Merge JSON files together",
 	Run: func(_ *cobra.Command, args []string) {

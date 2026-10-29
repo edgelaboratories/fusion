@@ -9,7 +9,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var yamlCmd = &cobra.Command{
+var yamlCmd = &cobra.Command{ //nolint:exhaustruct_v5
 	Use:   "yaml",
 	Short: "Merge YAML files together",
 	Run: func(_ *cobra.Command, args []string) {

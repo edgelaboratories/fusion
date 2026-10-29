@@ -9,7 +9,7 @@ import (
 var (
 	version = "dev"
 
-	versionCmd = &cobra.Command{
+	versionCmd = &cobra.Command{ //nolint:exhaustruct_v5
 		Use:   "version",
 		Short: "Print the version number",
 		Run: func(_ *cobra.Command, _ []string) {
