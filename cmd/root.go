@@ -10,7 +10,7 @@ import (
 var verbose bool
 
 // rootCmd represents the base command when called without any subcommands.
-var rootCmd = &cobra.Command{
+var rootCmd = &cobra.Command{ //nolint:exhaustruct_v5
 	Use:   "fusion",
 	Short: "Merge json, yaml or toml files together",
 	Long: `Fusion is a tool to merge files together.
